@@ -3,7 +3,7 @@
 
 set -u
 
-MANIFEST="${1:-configs/cifar10_posthoc_weight_paths_20260528-132834-ce-members-posthoc.env}"
+MANIFEST="${1:-configs/cifar10_posthoc_weight_paths.env}"
 if [[ $# -gt 0 ]]; then
   shift
 fi

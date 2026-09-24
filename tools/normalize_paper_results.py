@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Normalize `docs/paper_results.csv` into `docs/paper_results_normalized.csv`.
+"""Normalize the extracted CIFAR-10 paper results into a stable CSV schema.
 Creates canonical metric names and units.
 """
 import csv
 from pathlib import Path
 
-IN = Path('docs/paper_results.csv')
-OUT = Path('docs/paper_results_normalized.csv')
+RESULT_DIR = Path('docs/results/cifar10/paper_outcomes')
+IN = RESULT_DIR / 'paper_results.csv'
+OUT = RESULT_DIR / 'paper_results_normalized.csv'
 
 def clean(x):
     return x.strip() if x is not None else ''

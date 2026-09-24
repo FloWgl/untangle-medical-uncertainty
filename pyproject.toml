@@ -7,6 +7,9 @@
 authors = [
     { name = "Bálint Mucsányi", email = "b.h.mucsanyi@gmail.com" },
 ]
+maintainers = [
+    { name = "Florian Weigl" },
+]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
@@ -37,9 +40,13 @@ dependencies = [
     "pytorch-minimize",
     "medmnist",
 ]
-description = "A benchmark of uncertainty disentanglement."
+description = "Uncertainty disentanglement experiments for medical image classification."
 dynamic = ["version"]
-keywords = ["uncertainty disentanglement", "uncertainty quantification"]
+keywords = [
+    "uncertainty disentanglement",
+    "uncertainty quantification",
+    "medical image classification",
+]
 name = "untangle"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"

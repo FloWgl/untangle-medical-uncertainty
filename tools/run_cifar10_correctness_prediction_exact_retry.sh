@@ -69,7 +69,7 @@ run_phase() {
   echo "[$start_time] START ${phase} subset=${subset}"
   {
     echo "[$start_time] command=${PYTHON_BIN} train.py ${COMMON_ARGS[*]} --train-subset ${subset}"
-    echo "Recovered W&B source: docs/recovered_wandb/missing_trainable/azcfycns_cdc24149_config.json"
+    echo "Recovered W&B source: run cdc24149 from sweep azcfycns"
   } > "$log_file"
 
   "$PYTHON_BIN" train.py "${COMMON_ARGS[@]}" --train-subset "$subset" >> "$log_file" 2>&1
@@ -87,7 +87,7 @@ run_phase() {
 }
 
 echo "[$(date --iso-8601=seconds)] CIFAR-10 correctness-prediction exact retry ${RUN_ID}"
-echo "Recovered source: docs/recovered_wandb/missing_trainable/azcfycns_cdc24149_config.json"
+echo "Recovered source: W&B run cdc24149 from sweep azcfycns"
 echo "Status file: ${STATUS_FILE}"
 
 run_phase full-data 1.0

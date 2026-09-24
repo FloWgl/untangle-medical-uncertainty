@@ -12,8 +12,8 @@ PATHMNIST_C_DIR="${PATHMNIST_C_DIR:-$PATHMNIST_C_ROOT/pathmnist}"
 ARCHIVE="${ARCHIVE:-$PATHMNIST_C_ROOT/pathmnist.zip}"
 URL="${URL:-https://zenodo.org/records/11471504/files/pathmnist.zip?download=1}"
 EXPECTED_MD5="${EXPECTED_MD5:-bf62498906ec0383c3ec5ff12ac70c00}"
-CMD_FILE="${CMD_FILE:-$REPO_ROOT/logs/pathmnist_hpc_20260730-fix3-pathmnist-corruption/commands.txt}"
 RUN_ID="${RUN_ID:-$(date +%Y%m%d-%H%M%S)-pathmnist-c-official}"
+CHECKPOINT_MANIFEST="${CHECKPOINT_MANIFEST:?set CHECKPOINT_MANIFEST to a checkpoint CSV}"
 
 required=(
   brightness_down
@@ -74,22 +74,14 @@ for name in "${required[@]}"; do
 done
 echo "Official PathMNIST-C files ready in $PATHMNIST_C_DIR"
 
-if [[ ! -f "$CMD_FILE" ]]; then
-  echo "Command file not found: $CMD_FILE" >&2
+if [[ ! -f "$CHECKPOINT_MANIFEST" ]]; then
+  echo "Checkpoint manifest not found: $CHECKPOINT_MANIFEST" >&2
   exit 5
 fi
 
-num_tasks="$(wc -l < "$CMD_FILE")"
-if [[ "$num_tasks" -lt 1 ]]; then
-  echo "Command file has no tasks: $CMD_FILE" >&2
-  exit 6
-fi
-
-echo "Submitting official PathMNIST-C corruption evaluation: $num_tasks tasks"
-sbatch \
-  --job-name pathmnist-corruption-official \
-  --array "1-$num_tasks" \
-  --gres gpu:1 \
-  --time 1-00:00:00 \
-  --export "ALL,CMD_FILE=$CMD_FILE,WORK_DIR=$REPO_ROOT,ENV_COMMAND=module load python/pytorch2.6py3.12" \
-  tools/hpc/untangle_job_array.sbatch
+echo "Submitting official PathMNIST-C corruption evaluation."
+PHASE=corruption \
+RUN_ID="$RUN_ID" \
+DATA_ROOT="$DATA_ROOT" \
+CHECKPOINT_MANIFEST="$CHECKPOINT_MANIFEST" \
+  bash tools/hpc/submit_pathmnist_hpc.sh

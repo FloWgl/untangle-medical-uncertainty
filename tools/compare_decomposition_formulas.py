@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare IT and estimated Bregman decomposition readouts across experiments."""
+"""Compare IT and estimated Bregman decomposition results across experiments."""
 
 from pathlib import Path
 
@@ -9,7 +9,7 @@ from scipy.stats import spearmanr
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs" / "thesis" / "generated" / "decomposition_formula_comparison.csv"
+OUT = ROOT / "docs" / "results" / "decomposition_formula_comparison.csv"
 EPS = 1e-6
 NO_MEASURED_EU = {
     "ce-baseline", "correctness-prediction", "deep-correctness-prediction",

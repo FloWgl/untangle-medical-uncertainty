@@ -148,23 +148,23 @@ PathMNIST-C note:
 
 Transfer method roster:
 
-| Method | Train/post-hoc | Key PathMNIST flags | Status note |
+| Method | Train/post-hoc | Key PathMNIST flags | Requirements |
 |---|---|---|---|
 | CE baseline | train | `--method-name ce-baseline --loss cross-entropy` | Baseline for all post-hoc methods. |
 | Correctness prediction | train | `--method-name correctness-prediction --loss correctness-prediction --lambda-uncertainty-loss 0.01` | Fixed auxiliary-head setting. |
-| Deep correctness prediction | train | `--method-name deep-correctness-prediction --loss correctness-prediction --lambda-uncertainty-loss 0.01` | Previously completed after queued rerun; verify checkpoint manifest. |
-| Loss prediction | train | `--method-name loss-prediction --loss loss-prediction --lambda-uncertainty-loss 0.01` | Existing protocol shows completed run. |
-| Deep loss prediction | train | `--method-name deep-loss-prediction --loss loss-prediction --lambda-uncertainty-loss 0.01` | Existing protocol shows completed rerun. |
+| Deep correctness prediction | train | `--method-name deep-correctness-prediction --loss correctness-prediction --lambda-uncertainty-loss 0.01` | Higher memory use than the shallow auxiliary head. |
+| Loss prediction | train | `--method-name loss-prediction --loss loss-prediction --lambda-uncertainty-loss 0.01` | Fixed auxiliary-head setting. |
+| Deep loss prediction | train | `--method-name deep-loss-prediction --loss loss-prediction --lambda-uncertainty-loss 0.01` | Higher memory use than the shallow auxiliary head. |
 | EDL | train | `--method-name edl --loss edl --edl-start-epoch 0 --edl-scaler 1.0 --edl-activation exp --num-classes 9` | `--num-classes 9` is required. |
-| SNGP | train | spectral normalization + GP flags from `docs/PATHMNIST_EXPERIMENT_SETTINGS.md` | Existing protocol shows completed rerun. |
-| PostNet | train | `--method-name postnet --latent-dim 6 --num-hidden-features 256 --num-density-components 6 --uce-regularization-factor 1e-5` | Verify latest checkpoint/log. |
-| HET / HET-XL / HetClassNN | train | HET flags from `docs/PATHMNIST_EXPERIMENT_SETTINGS.md` | Earlier runs hit OOM; reserve for larger GPU or reduced batch. |
-| Shallow ensemble | train | `--method-name shallow-ensemble --num-heads 10` | Earlier runs hit OOM. |
+| SNGP | train | spectral normalization + GP flags from `docs/PATHMNIST_EXPERIMENT_SETTINGS.md` | GP covariance updates increase evaluation cost. |
+| PostNet | train | `--method-name postnet --latent-dim 6 --num-hidden-features 256 --num-density-components 6 --uce-regularization-factor 1e-5` | Uses the UCE objective and density components. |
+| HET / HET-XL / HetClassNN | train | HET flags from `docs/PATHMNIST_EXPERIMENT_SETTINGS.md` | May require a reduced batch size. |
+| Shallow ensemble | train | `--method-name shallow-ensemble --num-heads 10` | May require a reduced batch size. |
 | Deep ensemble | post-hoc | `--method-name deep-ensemble --weight-paths ...` | Needs multiple trained checkpoints. |
 | Temperature scaling | post-hoc | `--method-name temperature-scaling --weight-paths ...` | Needs trained checkpoint. |
 | Mahalanobis | post-hoc | `--method-name mahalanobis --weight-paths ... --magnitude 0.001` | Needs covariance/feature pass. |
 | DDU | post-hoc/train-compatible | DDU spectral flags | Needs compatible checkpoint. |
 | SWAG | post-hoc/fine-tune | `--method-name swag --use-low-rank-cov --max-rank 20` | Needs checkpoint collection. |
-| Laplace | post-hoc | `--method-name laplace --hessian-structure kron` | Dependency stack is risky in current environment. |
+| Laplace | post-hoc | `--method-name laplace --hessian-structure kron` | Uses the dependency versions pinned in `pyproject.toml`. |
 
 ---
