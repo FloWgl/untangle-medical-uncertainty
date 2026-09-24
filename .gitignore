@@ -89,6 +89,7 @@ wandb/
 /tools/plot_pathmnist_example_shifts.py
 /tools/plot_thesis_result_figures.py
 /tools/render_mhist_paperstyle_svg.py
+/tools/update_pathmnist_decomposition_tables.py
 /plots/plot_mhist_paperstyle.py
 
 # LaTeX and document build products outside excluded document trees

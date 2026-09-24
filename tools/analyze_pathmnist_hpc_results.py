@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Summarize PathMNIST HPC decomposition tensors for thesis tables."""
+"""Summarize PathMNIST HPC decomposition tensors as portable CSV tables."""
 
 from __future__ import annotations
 

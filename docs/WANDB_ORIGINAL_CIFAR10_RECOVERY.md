@@ -6,15 +6,9 @@ This records the recovered W&B metadata for the CIFAR-10 post-hoc base models.
 
 The original base checkpoints used by the post-hoc CIFAR-10 methods come from final CE baseline sweep `uo3gu133`.
 
-Recovered files are stored in `docs/recovered_wandb/`:
-
-- `uo3gu133_runs_summary.csv`
-- `uo3gu133_checkpoint_mapping.csv`
-- `uo3gu133_<run>_config.json`
-- `uo3gu133_<run>_config.yaml`
-- `uo3gu133_<run>_output.log`
-- `uo3gu133_<run>_wandb-summary.json`
-- `uo3gu133_<run>_files.txt`
+The portable configuration is represented by the tracked sweep YAMLs in
+`docs/wandb_sweeps/` and the reconstructed launchers in `tools/launchers/`.
+Raw W&B downloads are not versioned.
 
 ## Common Training Config
 
@@ -58,7 +52,7 @@ The checkpoint directory names above match the author paths embedded in the post
 - `h0m0bybl`: Mahalanobis, uses `checkpoint_last.pt`
 - `zsiqsl6u`: SWAG, uses `checkpoint_last.pt`
 
-## Missing Piece
+## Checkpoint Availability
 
 W&B run files contain config/log/summary/requirements metadata, but not the checkpoint binaries. The original `.pt` files are therefore not recoverable from W&B alone. The closest reproducible path is to retrain the five CE members with:
 

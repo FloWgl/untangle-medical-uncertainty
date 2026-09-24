@@ -2,8 +2,8 @@
 
 This repository contains the code and portable metadata required to reproduce
 the CIFAR-10, PathMNIST, PathMNIST-C, and MHIST experiments. Training outputs,
-datasets, checkpoints, cluster logs, thesis sources, presentations, and assistant
-or editor state are intentionally not versioned.
+datasets, checkpoints, cluster logs, generated documents, and local working files
+are intentionally not versioned.
 
 ## 1. Environment
 
@@ -40,7 +40,7 @@ Export the MedMNIST data into the expected image-folder layout:
 ```bash
 python tools/export_medmnist_to_imagefolder.py \
   --download \
-  --output-dir "$DATA_ROOT/pathmnist_cache/pathmnist"
+  --output-dir "$DATA_ROOT/pathmnist_cache"
 ```
 
 PathMNIST-C setup and the official-corruption submission entry point are in
@@ -182,8 +182,7 @@ artifacts.
 
 The repository intentionally excludes:
 
-- thesis and presentation sources or generated documents;
-- Codex, Copilot, editor, or chat-session state;
+- generated documents and local editor state;
 - downloaded datasets and temporary exports;
 - model checkpoints, raw uncertainty tensors, and W&B artifacts;
 - scheduler logs, process IDs, and archived working directories;

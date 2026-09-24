@@ -5,7 +5,7 @@ set -u
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT" || exit 1
 
-SOURCE_RUN_ID="${SOURCE_RUN_ID:-20260629-075840-mhist-posthoc-resume}"
+SOURCE_RUN_ID="${SOURCE_RUN_ID:?set SOURCE_RUN_ID to a completed MHIST post-hoc run}"
 RUN_ID="${RUN_ID:-$(date +%Y%m%d-%H%M%S)-mhist-laplace}"
 LOG_DIR="$REPO_ROOT/logs/mhist_laplace_${RUN_ID}"
 STATUS_FILE="$LOG_DIR/status.tsv"

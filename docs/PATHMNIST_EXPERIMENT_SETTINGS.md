@@ -168,7 +168,7 @@ These methods train a model directly on PathMNIST.
 - `--rbf-length-scale 0.1`
 - `--ema-momentum 0.999`
 - `--lambda-gradient-penalty 0.75`
-- Memory pressure is high; the smoke run at batch size 64 hit CUDA OOM
+- GPU memory use may require a smaller batch size than the shared default
 
 ### 2. Post-hoc methods
 
@@ -215,7 +215,6 @@ These methods need at least one checkpoint from a trained model.
 - `--num-mc-samples-cv 50`
 - `--pred-type glm`
 - `--hessian-structure kron`
-- Blocked here because the installed `laplace` package depends on missing `curvlinops._base`
 
 ### 3. Methods that are feasible but need more care
 
@@ -227,7 +226,7 @@ or additional post-hoc data passes.
 - SWAG: needs checkpoints across training
 - DDU: needs a trained checkpoint plus feature extraction over the training set
 - Mahalanobis: needs a trained checkpoint and covariance estimation
-- Laplace: blocked in this environment by missing dependency support
+- Laplace: requires the pinned `laplace-torch` and `curvlinops-for-pytorch` versions
 - DUQ: may require smaller batch size or a smaller backbone to avoid OOM
 
 ### 4. What does not transfer from the paper
@@ -236,7 +235,7 @@ These are not PathMNIST-specific experiment settings; they are paper-only metric
 outputs that depend on soft labels or external datasets.
 
 - Soft-label metrics
-- Bregman decomposition outputs requiring soft annotations
+- Ground-truth Bregman targets derived from soft label distributions
 - CIFAR-10H-specific evaluation
 - ImageNet-ReaL-specific evaluation
 
@@ -249,8 +248,8 @@ Baseline hard-label PathMNIST:
 python train.py \
   --dataset hard/pathmnist \
   --dataset-id hard/pathmnist \
-  --data-dir /path/to/pathmnist_cache \
-  --data-dir-id /path/to/pathmnist_cache \
+  --data-dir /path/to/pathmnist_cache/pathmnist \
+  --data-dir-id /path/to/pathmnist_cache/pathmnist \
   --dataset-download \
   --method-name ce-baseline \
   --loss cross-entropy \
@@ -273,8 +272,8 @@ Correctness prediction on hard-label PathMNIST:
 python train.py \
   --dataset hard/pathmnist \
   --dataset-id hard/pathmnist \
-  --data-dir /path/to/pathmnist_cache \
-  --data-dir-id /path/to/pathmnist_cache \
+  --data-dir /path/to/pathmnist_cache/pathmnist \
+  --data-dir-id /path/to/pathmnist_cache/pathmnist \
   --dataset-download \
   --method-name correctness-prediction \
   --loss correctness-prediction \
@@ -292,11 +291,9 @@ python train.py \
   --discard-ood-test-sets
 ```
 
-Notes on current PathMNIST runs
--------------------------------
+Reference results
+-----------------
 
-- CE baseline smoke run completed successfully with 0.7543 eval accuracy and 0.8213 eval metric.
-- Temperature scaling completed successfully as a post-hoc run.
-- MC-Dropout smoke run completed successfully with 0.7255 eval accuracy and 0.7793 eval metric.
-- DUQ hit CUDA OOM at batch size 64.
-- Laplace is blocked by missing `curvlinops._base` in the installed dependency.
+Completed experiment summaries are stored under `docs/results/pathmnist/`.
+Smoke-test measurements and cluster-specific failures are not part of the stable
+experiment specification.

@@ -6,18 +6,27 @@ Singularity container.
 """
 
 import argparse
+import os
 import re
 import subprocess
 from pathlib import Path
 from shutil import which
 
+REPO_ROOT = Path(__file__).resolve().parent
+
 parser = argparse.ArgumentParser(description="Submit Weights & Biases sweeps to Slurm")
 parser.add_argument("sweep-id", type=str, help="The Weights & Biases sweep ID")
 parser.add_argument(
-    "--username", type=str, default="bmucsanyi", help="The Weights & Biases username"
+    "--username",
+    type=str,
+    default=os.environ.get("WANDB_ENTITY"),
+    help="Weights & Biases entity (default: WANDB_ENTITY)",
 )
 parser.add_argument(
-    "--project", type=str, default="untangle", help="The Weights & Biases project"
+    "--project",
+    type=str,
+    default=os.environ.get("WANDB_PROJECT", "untangle"),
+    help="Weights & Biases project (default: WANDB_PROJECT or untangle)",
 )
 parser.add_argument(
     "--count", type=int, default=1, help="Number of runs to query from the sweep"
@@ -32,28 +41,27 @@ parser.add_argument(
 parser.add_argument(
     "--simg-path",
     type=Path,
-    default=Path("/mnt/lustre/work/oh/owl569/repos/untangle/untangle.simg"),
-    help="Path to Singularity image",
+    default=Path(os.environ.get("SINGULARITY_IMAGE", REPO_ROOT / "untangle.simg")),
+    help="Path to Singularity image (default: SINGULARITY_IMAGE)",
 )
 parser.add_argument(
     "--repo-path",
     type=Path,
-    default=Path("/mnt/lustre/work/oh/owl569/repos/untangle"),
-    help="Path to repository",
+    default=Path(os.environ.get("REPO_ROOT", REPO_ROOT)),
+    help="Path to repository (default: this checkout or REPO_ROOT)",
 )
 parser.add_argument(
     "--datasets-root-path",
     type=Path,
-    default=Path("/mnt/lustre/work/oh/owl569/datasets"),
-    help="Root path of datasets",
+    default=Path(os.environ.get("DATA_ROOT", REPO_ROOT / "data")),
+    help="Root path of datasets (default: DATA_ROOT or <repo>/data)",
 )
 parser.add_argument("--job-name", type=str, default=None, help="Job name")
 parser.add_argument(
     "--partition",
     type=str,
-    default="2080-galvani",
-    choices=["2080-galvani", "a100-galvani"],
-    help="Slurm partition",
+    default=os.environ.get("SLURM_PARTITION", "gpu"),
+    help="Slurm partition (default: SLURM_PARTITION or gpu)",
 )
 parser.add_argument("--cpus-per-task", type=int, default=12, help="Number of CPUs")
 parser.add_argument("--mem-per-cpu", type=str, default="4G", help="Available RAM per CPU")
@@ -62,8 +70,8 @@ parser.add_argument("--time", type=str, default="3-00:00:00", help="Maximum runt
 parser.add_argument(
     "--log-path",
     type=Path,
-    default=Path("/mnt/lustre/work/oh/owl569/logs"),
-    help="The output file will be stored in this folder",
+    default=Path(os.environ.get("LOG_DIR", REPO_ROOT / "logs")),
+    help="Output directory (default: LOG_DIR or <repo>/logs)",
 )
 parser.add_argument("--constraint", type=str, default=None, help="Target node constraint")
 parser.add_argument("--exclude", type=str, default=None, help="Exclude specific nodes")
@@ -211,6 +219,8 @@ def get_cmd_str(args: argparse.Namespace) -> str:
 
 def main() -> None:
     args = parser.parse_args()
+    if not args.username:
+        parser.error("--username is required unless WANDB_ENTITY is set")
     cmd_str = get_cmd_str(args)
     if args.job_name is None:
         args.job_name = getattr(args, "sweep-id")

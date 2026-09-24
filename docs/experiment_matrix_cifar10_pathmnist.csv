@@ -1,33 +1,9 @@
-phase,dataset,method,subset,sweep_or_source,run_type,status,notes
-cifar10_verify,hard/cifar10,ce-baseline,1.0,cedfgnqz,train,needed,Use paper-selected launcher/YAML value rather than new search.
-cifar10_verify,hard/cifar10,loss-prediction,1.0,9fb4ansn,train,needed,Minimal verification auxiliary-head method.
-cifar10_verify,hard/cifar10,edl,1.0,5lhhpt1y,train,needed,Requires EDL loss settings.
-cifar10_verify,hard/cifar10,sngp,1.0,jkzjb5vz,train,needed,Use SNGP sweep/launcher after path cleanup.
-cifar10_verify,hard/cifar10,postnet,1.0,8ugac5sn,train,needed,Use UCE/PostNet settings.
-cifar10_full,hard/cifar10,correctness-prediction,1.0,azcfycns,train,queued_after_minimal,Full reproduction roster.
-cifar10_full,hard/cifar10,mc-dropout,1.0,k4xc00mf,train,queued_after_minimal,Full reproduction roster.
-cifar10_full,hard/cifar10,hetclassnn,1.0,pb3a6oru,train,queued_after_minimal,Full reproduction roster.
-cifar10_full,hard/cifar10,het-xl,1.0,olapo0kg,train,queued_after_minimal,HET-XL.
-cifar10_full,hard/cifar10,het,1.0,e6rpfaue,train,queued_after_minimal,HET uses --use-het.
-cifar10_full,hard/cifar10,shallow-ensemble,1.0,k6scvi1c,train,queued_after_minimal,Full reproduction roster.
-cifar10_full,hard/cifar10,ddu,1.0,5w1yjrmj,train_or_posthoc,queued_after_minimal,Needs compatible checkpoint/features.
-cifar10_full,hard/cifar10,deep-ensemble,1.0,bn1hsbqz,posthoc,queued_after_minimal,Needs multiple checkpoints.
-cifar10_full,hard/cifar10,temperature-scaling,1.0,lh04ospw,posthoc,queued_after_minimal,Needs checkpoint paths.
-cifar10_full,hard/cifar10,mahalanobis,1.0,h0m0bybl,posthoc,queued_after_minimal,Needs checkpoint paths/covariance.
-cifar10_full,hard/cifar10,laplace,1.0,nnle8epz,posthoc,risky,Dependency stack may need work.
-cifar10_full,hard/cifar10,swag,1.0,zsiqsl6u,posthoc_or_finetune,queued_after_minimal,Needs base checkpoints/collection.
-pathmnist_transfer,hard/pathmnist,ce-baseline,1.0,PATHMNIST_DEFAULT,train,needed,Fixed PathMNIST recipe.
-pathmnist_transfer,hard/pathmnist,correctness-prediction,1.0,PATHMNIST_DEFAULT,train,needed,Fixed lambda 0.01.
-pathmnist_transfer,hard/pathmnist,deep-correctness-prediction,1.0,PATHMNIST_DEFAULT,train,needed,May be memory heavy.
-pathmnist_transfer,hard/pathmnist,loss-prediction,1.0,PATHMNIST_DEFAULT,train,done_or_verify,Existing protocol shows completed run; verify checkpoint manifest.
-pathmnist_transfer,hard/pathmnist,deep-loss-prediction,1.0,PATHMNIST_DEFAULT,train,done_or_verify,Existing protocol shows completed rerun; verify checkpoint manifest.
-pathmnist_transfer,hard/pathmnist,edl,1.0,PATHMNIST_DEFAULT,train,done_or_verify,Use --num-classes 9.
-pathmnist_transfer,hard/pathmnist,sngp,1.0,PATHMNIST_DEFAULT,train,done_or_verify,Existing protocol shows completed rerun.
-pathmnist_transfer,hard/pathmnist,postnet,1.0,PATHMNIST_DEFAULT,train,verify,Existing status unclear; verify log/checkpoint.
-pathmnist_transfer,hard/pathmnist,het,1.0,PATHMNIST_DEFAULT,train,risky,Earlier runs failed with OOM.
-pathmnist_transfer,hard/pathmnist,het-xl,1.0,PATHMNIST_DEFAULT,train,risky,Earlier runs failed with OOM.
-pathmnist_transfer,hard/pathmnist,hetclassnn,1.0,PATHMNIST_DEFAULT,train,risky,Earlier runs failed with OOM.
-pathmnist_transfer,hard/pathmnist,shallow-ensemble,1.0,PATHMNIST_DEFAULT,train,risky,Earlier runs failed with OOM.
-pathmnist_transfer,hard/pathmnist,ce-baseline,0.5,PATHMNIST_DEFAULT,train,needed,Epistemic/data-scarcity branch.
-pathmnist_transfer,hard/pathmnist,ce-baseline,0.1,PATHMNIST_DEFAULT,train,needed,Epistemic/data-scarcity branch.
-pathmnist_eval,hard/pathmnist-c,all_trained_methods,1.0,PATHMNIST_C_NPZ,evaluate,needed,Use --severities 1 for NPZ corruptions.
+phase,dataset,methods,conditions,run_type,source,purpose
+cifar10_reproduction,hard/cifar10,trainable benchmark methods,full data,training,recovered W&B sweep YAMLs,reproduce upstream predictive-uncertainty results
+cifar10_scarcity,hard/cifar10,methods with decomposition outputs,"100%;50%;10%",training and analysis,recovered W&B sweep YAMLs,test response to reduced training evidence
+cifar10_corruption,hard/cifar10-c,trained and post-hoc methods,severities 1-5,evaluation,reconstructed launchers,test corruption detection
+pathmnist_clean,hard/pathmnist,configured method roster,full data,training,PATHMNIST_EXPERIMENT_SETTINGS.md,establish clean-data reference results
+pathmnist_scarcity,hard/pathmnist,configured method roster,"100%;50%;10%",training and analysis,PathMNIST command generator,test response to reduced training evidence
+pathmnist_label_noise,hard/pathmnist,configured method roster,"0%;10%;20%;40% label noise",training and analysis,PathMNIST command generator,test response to synthetic label noise
+pathmnist_c_fixed,hard/pathmnist-c,methods with completed clean checkpoints,eight official corruption files,evaluation,official MedMNIST-C NPZ files,test fixed-corruption detection
+pathmnist_c_severity,hard/pathmnist-c,methods with completed clean checkpoints,"eight corruptions; severities 1-5",evaluation,generated corruption transforms,test response across corruption severity

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Submit PathMNIST reruns needed for IT/Bregman decomposition thesis tables.
+# Submit PathMNIST reruns and export portable IT/Bregman result tables.
 
 set -euo pipefail
 
@@ -110,15 +110,6 @@ log "Summarizing IT and Bregman decomposition tensors."
   --audit-csv "$AUDIT_CSV" \
   --out-dir "$REPO_ROOT/docs/results/pathmnist" | tee -a "$STATUS_FILE"
 
-log "Refreshing PathMNIST thesis tables."
-"$PYTHON_BIN" tools/update_pathmnist_decomposition_tables.py \
-  --repo-root "$REPO_ROOT" | tee -a "$STATUS_FILE"
-
-log "Compiling thesis."
-(
-  cd "$REPO_ROOT/docs/thesis"
-  tectonic thesis.tex
-) | tee -a "$STATUS_FILE"
-
 log "Done. Audit: $AUDIT_CSV"
 log "Checkpoint manifest: $CHECKPOINT_MANIFEST"
+log "Result tables: $REPO_ROOT/docs/results/pathmnist"
