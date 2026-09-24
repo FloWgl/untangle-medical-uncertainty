@@ -1,0 +1,3 @@
+python train.py --train-subset 1.0 --method-name postnet
+python train.py --train-subset 1.0 --method-name shallow-ensemble
+python train.py --train-subset 1.0 --method-name duq

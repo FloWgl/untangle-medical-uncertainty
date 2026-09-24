@@ -1,0 +1,81 @@
+Table I.1: Summary of average perbatch forward times for the benchmarked methods on CIFAR10.
+Note that the rankings for methods with similar forward times are subject to many external factors,
+such as the cluster node’s state or the uptime of the allocated GPU. However, computationally costly
+methods consistently require more time. Methods are sorted by increasing mean perbatch forward
+time.
+Method
+Mean (s) Min (s) Max (s)
+Temperature
+0.0614
+0.0605
+0.0629
+EDL
+0.0626
+0.0616
+0.0634
+DUQ
+0.0627
+0.0619
+0.0635
+CE Baseline
+0.0628
+0.0622
+0.0635
+Corr. Pred.
+0.0631
+0.0625
+0.0639
+HET
+0.0635
+0.0625
+0.0640
+Shallow Ens.
+0.0636
+0.0620
+0.0668
+Loss Pred.
+0.0673
+0.0619
+0.0800
+Laplace
+0.0668
+0.0664
+0.0677
+SNGP
+0.0703
+0.0665
+0.0842
+GP
+0.0698
+0.0625
+0.0870
+HETXL
+0.0728
+0.0727
+0.0730
+PostNet
+0.0838
+0.0812
+0.0882
+Mahalanobis
+0.7524
+0.7215
+0.8132
+DDU
+0.2038
+0.1543
+0.2685
+Deep Ens.
+0.3426
+0.3426
+0.3426
+HetClassNN
+1.9995
+1.9938
+2.0077
+MC Dropout
+2.0342
+1.9832
+2.1176
+SWAG
+3.2236

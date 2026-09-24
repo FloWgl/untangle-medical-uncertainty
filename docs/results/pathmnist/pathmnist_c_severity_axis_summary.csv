@@ -1,0 +1,31 @@
+method,method_label,severity,n_corruptions,it_au_ood_auroc_mean,it_eu_ood_auroc_mean,total_entropy_ood_auroc_mean,bregman_au_ood_auroc_mean,bregman_eu_ood_auroc_mean
+deep-correctness-prediction,Deep correctness prediction,1,8,0.517625,0.500000,0.517625,0.517625,0.501812
+deep-correctness-prediction,Deep correctness prediction,2,8,0.530446,0.500000,0.530446,0.530446,0.500828
+deep-correctness-prediction,Deep correctness prediction,3,8,0.528300,0.500000,0.528300,0.528300,0.500375
+deep-correctness-prediction,Deep correctness prediction,4,8,0.522023,0.500000,0.522023,0.522023,0.500672
+deep-correctness-prediction,Deep correctness prediction,5,8,0.499805,0.500000,0.499805,0.499805,0.500967
+deep-loss-prediction,Deep loss prediction,1,8,0.517625,0.500000,0.517625,0.517625,0.501812
+deep-loss-prediction,Deep loss prediction,2,8,0.530446,0.500000,0.530446,0.530446,0.500828
+deep-loss-prediction,Deep loss prediction,3,8,0.528300,0.500000,0.528300,0.528300,0.500375
+deep-loss-prediction,Deep loss prediction,4,8,0.522023,0.500000,0.522023,0.522023,0.500672
+deep-loss-prediction,Deep loss prediction,5,8,0.499805,0.500000,0.499805,0.499805,0.500967
+edl,EDL,1,8,0.496163,0.515778,0.517660,0.496163,0.497401
+edl,EDL,2,8,0.501527,0.512673,0.530446,0.501527,0.499641
+edl,EDL,3,8,0.519315,0.482971,0.528128,0.519315,0.498890
+edl,EDL,4,8,0.539966,0.454669,0.521862,0.539966,0.496680
+edl,EDL,5,8,0.550798,0.428626,0.499646,0.550798,0.497882
+loss-prediction,Loss prediction,1,8,0.517647,0.500000,0.517647,0.517647,0.499777
+loss-prediction,Loss prediction,2,8,0.530454,0.500000,0.530454,0.530454,0.498781
+loss-prediction,Loss prediction,3,8,0.528211,0.500000,0.528211,0.528211,0.498748
+loss-prediction,Loss prediction,4,8,0.522087,0.500000,0.522087,0.522087,0.499344
+loss-prediction,Loss prediction,5,8,0.500085,0.500000,0.500085,0.500085,0.500338
+postnet,PostNet,1,8,0.511060,0.508797,0.511044,0.511060,0.503779
+postnet,PostNet,2,8,0.518776,0.515632,0.518756,0.518776,0.503936
+postnet,PostNet,3,8,0.515629,0.512587,0.515609,0.515629,0.502240
+postnet,PostNet,4,8,0.516240,0.517317,0.516248,0.516240,0.501655
+postnet,PostNet,5,8,0.508257,0.519104,0.508331,0.508257,0.502087
+sngp,SNGP,1,8,0.502437,0.503892,0.504073,0.502437,0.503575
+sngp,SNGP,2,8,0.503022,0.501372,0.501865,0.503022,0.498619
+sngp,SNGP,3,8,0.505022,0.500699,0.501965,0.505022,0.501126
+sngp,SNGP,4,8,0.502669,0.500358,0.500782,0.502669,0.500478
+sngp,SNGP,5,8,0.502668,0.501057,0.501431,0.502668,0.500047

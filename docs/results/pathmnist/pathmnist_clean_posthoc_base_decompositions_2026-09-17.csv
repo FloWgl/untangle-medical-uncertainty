@@ -1,0 +1,13 @@
+intervention,method,level,decomposition,au_mean,eu_mean,finite_n,task
+scarcity,ce-baseline,1.0,information-theoretic,0.154702127,0,7180,1
+scarcity,ce-baseline,1.0,bregman-estimated,0.154702127,-9.265996304e-11,7180,1
+scarcity,sngp,1.0,information-theoretic,0.1348998994,0.001008035848,7180,2
+scarcity,sngp,1.0,bregman-estimated,0.1348998994,0.00101473846,7180,2
+scarcity,ce-baseline,1.0,information-theoretic,0.1194900125,0,7180,3
+scarcity,ce-baseline,1.0,bregman-estimated,0.1194900125,-8.769693999e-11,7180,3
+scarcity,ce-baseline,1.0,information-theoretic,0.1510493755,0,7180,4
+scarcity,ce-baseline,1.0,bregman-estimated,0.1510493755,3.587078551e-11,7180,4
+scarcity,ce-baseline,1.0,information-theoretic,0.1112989485,0,7180,5
+scarcity,ce-baseline,1.0,bregman-estimated,0.1112989485,-3.671798282e-11,7180,5
+scarcity,ce-baseline,1.0,information-theoretic,0.1025760695,0,7180,6
+scarcity,ce-baseline,1.0,bregman-estimated,0.1025760695,-3.678200799e-11,7180,6

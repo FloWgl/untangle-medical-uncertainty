@@ -1,0 +1,65 @@
+table,method,metric,fraction,value,unit
+I.1,Temperature,forward_time_s,,0.0614,s
+I.1,EDL,forward_time_s,,0.0626,s
+I.1,DUQ,forward_time_s,,0.0627,s
+I.1,CE Baseline,forward_time_s,,0.0628,s
+I.1,Corr. Pred.,forward_time_s,,0.0631,s
+I.1,HET,forward_time_s,,0.0635,s
+I.1,Shallow Ens.,forward_time_s,,0.0636,s
+I.1,Loss Pred.,forward_time_s,,0.0673,s
+I.1,Laplace,forward_time_s,,0.0668,s
+I.1,SNGP,forward_time_s,,0.0703,s
+I.1,GP,forward_time_s,,0.0698,s
+I.1,HETXL,forward_time_s,,0.0728,s
+I.1,PostNet,forward_time_s,,0.0838,s
+I.1,Mahalanobis,forward_time_s,,0.7524,s
+I.1,DDU,forward_time_s,,0.2038,s
+I.1,Deep Ens.,forward_time_s,,0.3426,s
+I.1,HetClassNN,forward_time_s,,1.9995,s
+I.1,MC Dropout,forward_time_s,,2.0342,s
+H.2,Deep,it_decomp_deep,10%,0.235,unitless
+H.2,Deep,it_decomp_deep,50%,0.103,unitless
+H.2,Deep,it_decomp_deep,100%,0.084,unitless
+H.2,EDL,it_decomp_edl,10%,1.701,unitless
+H.2,EDL,it_decomp_edl,50%,0.869,unitless
+H.2,EDL,it_decomp_edl,100%,0.716,unitless
+H.2,GP,it_decomp_gp,10%,0.208,unitless
+H.2,GP,it_decomp_gp,50%,0.082,unitless
+H.2,GP,it_decomp_gp,100%,0.066,unitless
+H.2,HET,it_decomp_het,10%,0.2,unitless
+H.2,HET,it_decomp_het,50%,0.108,unitless
+H.2,HET,it_decomp_het,100%,0.088,unitless
+H.2,HETClassNN,it_decomp_hetclassnn,10%,0.184,unitless
+H.2,HETClassNN,it_decomp_hetclassnn,50%,0.082,unitless
+H.2,HETClassNN,it_decomp_hetclassnn,100%,0.08,unitless
+I.2,HET,forward_time_s,,0.0485,s
+I.2,HETXL,forward_time_s,,0.0576,s
+I.2,Loss Pred.,forward_time_s,,0.0597,s
+I.2,Corr. Pred.,forward_time_s,,0.0598,s
+I.2,CE Baseline,forward_time_s,,0.0610,s
+I.2,Shallow Ens.,forward_time_s,,0.0651,s
+I.2,EDL,forward_time_s,,0.0764,s
+I.2,Temperature,forward_time_s,,0.0765,s
+I.2,GP,forward_time_s,,0.0818,s
+I.2,PostNet,forward_time_s,,0.0846,s
+I.2,SNGP,forward_time_s,,0.0924,s
+I.2,Laplace,forward_time_s,,0.3933,s
+I.2,Deep Ens.,forward_time_s,,0.4822,s
+I.2,Mahalanobis,forward_time_s,,1.5409,s
+I.2,DDU,forward_time_s,,2.3874,s
+I.2,MC Dropout,forward_time_s,,2.1183,s
+I.2,HetClassNN,forward_time_s,,2.2859,s
+I.2,SWAG,forward_time_s,,2.9623,s
+H.1,Rank Corr. CIFAR10 vs. ImageNet,rank_correlation,,0.503,unitless
+H.1,Correctness AUROC,rank_correlation,,0.659,unitless
+H.1,ECE,rank_correlation,,0.193,unitless
+H.1,Correctness Brier,rank_correlation,,0.445,unitless
+H.1,Correctness Log Prob.,rank_correlation,,0.554,unitless
+H.1,rAULC,rank_correlation,,0.482,unitless
+H.1,EAURC,rank_correlation,,0.581,unitless
+H.1,AUAC,rank_correlation,,0.263,unitless
+H.1,Accuracy,rank_correlation,,0.484,unitless
+H.1,Aleatoric Log Prob.,rank_correlation,,0.426,unitless
+H.1,Aleatoric Brier,rank_correlation,,0.013,unitless
+H.1,Aleatoric Rank Corr.,rank_correlation,,0.29,unitless
+H.1,Aleatoric AUROC,rank_correlation,,0.368,unitless

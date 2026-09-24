@@ -1,0 +1,81 @@
+Table H.1: Rank correlations of method rankings on different metrics for all combinations of methods
+and aggregators between CIFAR10 and ImageNet. The rankings of approaches are considerably
+different between these two datasets.
+Metric
+Rank Corr. CIFAR10 vs. ImageNet
+Correctness AUROC
+ECE
+Correctness Brier
+Correctness Log Prob.
+rAULC
+EAURC
+AUAC
+Accuracy
+Aleatoric Log Prob.
+Aleatoric Brier
+Aleatoric Rank Corr.
+Aleatoric AUROC
+OOD AUROC
+
+0.503
+0.659
+0.193
+0.445
+0.554
+0.482
+0.581
+0.263
+0.484
+0.426
+0.013
+0.290
+0.368
+
+Table H.2: Aleatoric and epistemic uncertainty estimates of the IT decomposition for different
+methods and reduced training dataset fractions of CIFAR10. We report the mean estimates over the
+test dataset.
+Aleatoric
+
+Epistemic
+
+Deep
+
+EDL
+
+GP
+
+HET
+
+HETClassNN
+
+HETXL
+
+Laplace
+
+MC Dropout
+
+PostNet
+
+Shallow
+
+SNGP
+
+SWAG
+
+Deep
+
+EDL
+
+GP
+
+HET
+
+HETClassNN
+
+HETXL
+
+Laplace
+
+MC Dropout
+
+PostNet

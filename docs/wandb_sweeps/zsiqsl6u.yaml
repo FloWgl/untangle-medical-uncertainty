@@ -1,0 +1,90 @@
+config:
+  command:
+  - python
+  - ${program}
+  - ${args_no_boolean_flags}
+  method: grid
+  metric:
+    goal: maximize
+    name: best_id_eval_one_minus_max_probs_of_bma_auroc_hard_bma_correctness_original
+  parameters:
+    accumulation-steps:
+      value: 1
+    amp:
+      value: false
+    batch-size:
+      value: 128
+    channels-last:
+      value: false
+    crop-pct:
+      value: 1
+    data-dir:
+      value: SLURM_TUE
+    dataset:
+      value: hard/cifar10
+    dataset-id:
+      value: soft/cifar10
+    epochs:
+      value: 40
+    eval-metric:
+      value: id_eval_one_minus_max_probs_of_bma_auroc_hard_bma_correctness_original
+    evaluate-on-test-sets:
+      value: true
+    hflip:
+      value: 0.5
+    img-size:
+      value: 32
+    log-wandb:
+      value: true
+    loss:
+      value: cross-entropy
+    lr:
+      value: 0.01
+    max-rank:
+      value: 20
+    mean:
+      value: 0.4914,0.4822,0.4465
+    method-name:
+      value: swag
+    model-name:
+      value: untangle/wide_resnet_c_preact_26_10
+    momentum:
+      value: 0.9
+    num-checkpoints-per-epoch:
+      value: 1
+    num-classes:
+      value: 10
+    num-mc-samples:
+      value: 30
+    opt:
+      value: momentum
+    padding:
+      value: 2
+    pin-memory:
+      value: true
+    prefetcher:
+      value: false
+    pretrained:
+      value: false
+    reset-classifier:
+      value: false
+    sched-kwargs:
+      value: sched=none
+    seed:
+      value: 42
+    std:
+      value: 0.2023,0.1994,0.2010
+    storage-device:
+      value: cuda
+    use-low-rank-cov:
+      value: true
+    weight-decay:
+      value: 0.0001
+    weight-paths:
+      values:
+      - /host/mnt/qb/work/kasneci/mkirchhof44/projects/untangle/checkpoints/20241025-125108-441033-untangle_wide_resnet_c_preact_26_10-32/checkpoint_last.pt
+      - /host/mnt/qb/work/kasneci/mkirchhof44/projects/untangle/checkpoints/20241025-183701-517629-untangle_wide_resnet_c_preact_26_10-32/checkpoint_last.pt
+      - /host/mnt/qb/work/kasneci/mkirchhof44/projects/untangle/checkpoints/20241026-001813-337221-untangle_wide_resnet_c_preact_26_10-32/checkpoint_last.pt
+      - /host/mnt/qb/work/kasneci/mkirchhof44/projects/untangle/checkpoints/20241026-060010-289890-untangle_wide_resnet_c_preact_26_10-32/checkpoint_last.pt
+      - /host/mnt/qb/work/kasneci/mkirchhof44/projects/untangle/checkpoints/20241026-114039-621072-untangle_wide_resnet_c_preact_26_10-32/checkpoint_last.pt
+  program: train.py

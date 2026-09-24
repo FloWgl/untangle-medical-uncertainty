@@ -1,0 +1,65 @@
+table,metric,method,mean,min,max
+I.1,forward_time,Temperature,0.0614,0.0605,0.0629
+I.1,forward_time,EDL,0.0626,0.0616,0.0634
+I.1,forward_time,DUQ,0.0627,0.0619,0.0635
+I.1,forward_time,CE Baseline,0.0628,0.0622,0.0635
+I.1,forward_time,Corr. Pred.,0.0631,0.0625,0.0639
+I.1,forward_time,HET,0.0635,0.0625,0.0640
+I.1,forward_time,Shallow Ens.,0.0636,0.0620,0.0668
+I.1,forward_time,Loss Pred.,0.0673,0.0619,0.0800
+I.1,forward_time,Laplace,0.0668,0.0664,0.0677
+I.1,forward_time,SNGP,0.0703,0.0665,0.0842
+I.1,forward_time,GP,0.0698,0.0625,0.0870
+I.1,forward_time,HETXL,0.0728,0.0727,0.0730
+I.1,forward_time,PostNet,0.0838,0.0812,0.0882
+I.1,forward_time,Mahalanobis,0.7524,0.7215,0.8132
+I.1,forward_time,DDU,0.2038,0.1543,0.2685
+I.1,forward_time,Deep Ens.,0.3426,0.3426,0.3426
+I.1,forward_time,HetClassNN,1.9995,1.9938,2.0077
+I.1,forward_time,MC Dropout,2.0342,1.9832,2.1176
+H.2,IT_decomp/Deep,Deep,10%,0.235
+H.2,IT_decomp/Deep,Deep,50%,0.103
+H.2,IT_decomp/Deep,Deep,100%,0.084
+H.2,IT_decomp/EDL,EDL,10%,1.701
+H.2,IT_decomp/EDL,EDL,50%,0.869
+H.2,IT_decomp/EDL,EDL,100%,0.716
+H.2,IT_decomp/GP,GP,10%,0.208
+H.2,IT_decomp/GP,GP,50%,0.082
+H.2,IT_decomp/GP,GP,100%,0.066
+H.2,IT_decomp/HET,HET,10%,0.2
+H.2,IT_decomp/HET,HET,50%,0.108
+H.2,IT_decomp/HET,HET,100%,0.088
+H.2,IT_decomp/HETClassNN,HETClassNN,10%,0.184
+H.2,IT_decomp/HETClassNN,HETClassNN,50%,0.082
+H.2,IT_decomp/HETClassNN,HETClassNN,100%,0.08
+I.2,forward_time,HET,0.0485,0.0464,0.0538
+I.2,forward_time,HETXL,0.0576,0.0564,0.0596
+I.2,forward_time,Loss Pred.,0.0597,0.0585,0.0622
+I.2,forward_time,Corr. Pred.,0.0598,0.0591,0.0606
+I.2,forward_time,CE Baseline,0.0610,0.0592,0.0637
+I.2,forward_time,Shallow Ens.,0.0651,0.0590,0.0882
+I.2,forward_time,EDL,0.0764,0.0739,0.0790
+I.2,forward_time,Temperature,0.0765,0.0671,0.1039
+I.2,forward_time,GP,0.0818,0.0795,0.0836
+I.2,forward_time,PostNet,0.0846,0.0816,0.0942
+I.2,forward_time,SNGP,0.0924,0.0861,0.1168
+I.2,forward_time,Laplace,0.3933,0.3837,0.4005
+I.2,forward_time,Deep Ens.,0.4822,0.4822,0.4822
+I.2,forward_time,Mahalanobis,1.5409,1.4934,1.6099
+I.2,forward_time,DDU,2.3874,2.2113,2.5266
+I.2,forward_time,MC Dropout,2.1183,2.0455,2.3026
+I.2,forward_time,HetClassNN,2.2859,2.0830,2.4543
+I.2,forward_time,SWAG,2.9623,2.8433,3.1278
+H.1,rank_corr,Rank Corr. CIFAR10 vs. ImageNet,, 0.503
+H.1,rank_corr,Correctness AUROC,, 0.659
+H.1,rank_corr,ECE,, 0.193
+H.1,rank_corr,Correctness Brier,, 0.445
+H.1,rank_corr,Correctness Log Prob.,, 0.554
+H.1,rank_corr,rAULC,, 0.482
+H.1,rank_corr,EAURC,, 0.581
+H.1,rank_corr,AUAC,, 0.263
+H.1,rank_corr,Accuracy,, 0.484
+H.1,rank_corr,Aleatoric Log Prob.,, 0.426
+H.1,rank_corr,Aleatoric Brier,, 0.013
+H.1,rank_corr,Aleatoric Rank Corr.,, 0.29
+H.1,rank_corr,Aleatoric AUROC,, 0.368

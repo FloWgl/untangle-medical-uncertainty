@@ -1,0 +1,8 @@
+method,checkpoint
+ce-baseline,checkpoints/ce-baseline/checkpoint_best.pt
+loss-prediction,checkpoints/loss-prediction/checkpoint_best.pt
+postnet,checkpoints/postnet/checkpoint_best.pt
+edl,checkpoints/edl/checkpoint_best.pt
+deep-correctness-prediction,checkpoints/deep-correctness-prediction/checkpoint_best.pt
+deep-loss-prediction,checkpoints/deep-loss-prediction/checkpoint_best.pt
+sngp,checkpoints/sngp/checkpoint_best.pt

@@ -1,0 +1,79 @@
+config:
+  command:
+  - python
+  - ${program}
+  - ${args_no_boolean_flags}
+  method: bayes
+  metric:
+    goal: maximize
+    name: best_id_eval_one_minus_max_probs_of_bma_auroc_hard_bma_correctness_original
+  parameters:
+    accumulation-steps:
+      value: 16
+    amp:
+      value: true
+    amp-dtype:
+      value: float16
+    batch-size:
+      value: 128
+    best-save-start-epoch:
+      value: 20
+    crop-pct:
+      value: 0.875
+    data-dir:
+      value: /host/scratch_local/datasets/ImageNet2012
+    dataset:
+      value: hard/imagenet
+    dataset-id:
+      value: soft/imagenet
+    epochs:
+      value: 50
+    eval-metric:
+      value: id_eval_one_minus_max_probs_of_bma_auroc_hard_bma_correctness_original
+    evaluate-on-test-sets:
+      value: false
+    img-size:
+      value: 224
+    log-wandb:
+      value: true
+    loss:
+      value: bma-cross-entropy
+    lr:
+      distribution: log_uniform_values
+      max: 0.02
+      min: 0.0005
+    mean:
+      value: 0.485,0.456,0.406
+    method-name:
+      value: shallow-ensemble
+    model-name:
+      value: untangle/resnet_50
+    num-classes:
+      value: 1000
+    num-heads:
+      value: 10
+    opt:
+      value: lamb
+    pin-memory:
+      value: true
+    prefetcher:
+      value: true
+    pretrained:
+      value: true
+    reset-classifier:
+      value: true
+    sched-kwargs:
+      value: sched=cosine warmup_lr=0.0001 warmup_epochs=5
+    seed:
+      value: 42
+    soft-imagenet-label-dir:
+      value: SLURM_TUE
+    std:
+      value: 0.229,0.224,0.225
+    test-split:
+      value: val
+    weight-decay:
+      values:
+      - 0.01
+      - 0.02
+  program: train.py
