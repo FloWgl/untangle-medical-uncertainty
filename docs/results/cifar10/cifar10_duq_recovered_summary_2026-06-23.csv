@@ -1,0 +1,4 @@
+phase,n,mean_final_accuracy,sd_final_accuracy,mean_final_metric,sd_final_metric,mean_best_metric,sd_best_metric
+full-data,5,0.9543,0.0018,0.9015,0.0091,0.9159,0.0036
+scarce-50pct,5,0.9300,0.0031,0.8723,0.0149,0.8905,0.0034
+scarce-10pct,5,0.8322,0.0039,0.8375,0.0099,0.8462,0.0058

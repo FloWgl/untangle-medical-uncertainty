@@ -1,0 +1,13 @@
+phase,method,final_accuracy,final_auroc,best_auroc,best_epoch
+full-data,deep-correctness-prediction,0.7769,0.7334,0.7641,16
+full-data,deep-loss-prediction,0.7687,0.7529,0.7905,23
+full-data,duq,0.7503,0.6951,0.7605,60
+full-data,fast-deep-ensemble,0.6571,0.8001,0.8001,eval-only
+scarce-50pct,deep-correctness-prediction,0.7134,0.6957,0.7197,73
+scarce-50pct,deep-loss-prediction,0.7308,0.6609,0.7372,41
+scarce-50pct,duq,0.7349,0.6954,0.7382,27
+scarce-50pct,fast-deep-ensemble,0.6438,0.7939,0.7939,eval-only
+scarce-10pct,deep-correctness-prediction,0.6837,0.6689,0.7276,117
+scarce-10pct,deep-loss-prediction,0.6510,0.6230,0.6729,64
+scarce-10pct,duq,0.5824,0.4837,0.6269,142
+scarce-10pct,fast-deep-ensemble,0.6356,0.7369,0.7369,eval-only

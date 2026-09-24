@@ -1,0 +1,94 @@
+config:
+  command:
+  - python
+  - ${program}
+  - ${args_no_boolean_flags}
+  method: bayes
+  metric:
+    goal: maximize
+    name: best_id_eval_one_minus_max_probs_of_bma_auroc_hard_bma_correctness_original
+  parameters:
+    accumulation-steps:
+      value: 1
+    amp:
+      value: false
+    batch-size:
+      value: 128
+    channels-last:
+      value: false
+    crop-pct:
+      value: 1
+    data-dir:
+      value: SLURM_TUE
+    dataset:
+      value: hard/cifar10
+    dataset-id:
+      value: soft/cifar10
+    epochs:
+      value: 250
+    eval-metric:
+      value: id_eval_one_minus_max_probs_of_bma_auroc_hard_bma_correctness_original
+    evaluate-on-test-sets:
+      value: false
+    hflip:
+      value: 0.5
+    img-size:
+      value: 32
+    log-wandb:
+      value: true
+    loss:
+      value: cross-entropy
+    lr:
+      distribution: uniform
+      max: 0.14
+      min: 0.05
+    max-num-id-train-samples:
+      value: 100000
+    mean:
+      value: 0.4914,0.4822,0.4465
+    method-name:
+      value: ddu
+    model-name:
+      value: untangle/wide_resnet_c_preact_26_10
+    momentum:
+      value: 0.9
+    num-classes:
+      value: 10
+    opt:
+      value: nesterov
+    padding:
+      value: 2
+    pin-memory:
+      value: true
+    prefetcher:
+      value: false
+    pretrained:
+      value: false
+    reset-classifier:
+      value: false
+    sched-kwargs:
+      value: sched=multistep decay_milestones=75,150,200 decay_rate=0.2 warmup_lr=0.005
+        warmup_epochs=1
+    seed:
+      value: 42
+    spectral-normalization-bound:
+      value: 3
+    spectral-normalization-iteration:
+      value: 1
+    std:
+      value: 0.2023,0.1994,0.2010
+    storage-device:
+      value: cuda
+    use-spectral-normalization:
+      value: true
+    use-spectral-normalized-batch-norm:
+      value: false
+    use-temperature-scaling:
+      value: true
+    use-tight-norm-for-pointwise-convs:
+      value: true
+    weight-decay:
+      distribution: log_uniform_values
+      max: 0.005
+      min: 1e-05
+  program: train.py

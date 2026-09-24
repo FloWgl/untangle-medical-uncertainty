@@ -1,0 +1,7 @@
+intervention,method,level,decomposition,au_mean,eu_mean,finite_n,task
+scarcity,postnet,1.0,information-theoretic,0.3013033569,0.01294224989,7180,1
+scarcity,postnet,1.0,bregman-estimated,0.3013033569,0.01532571949,7180,1
+scarcity,shallow-ensemble,1.0,information-theoretic,0.1069713533,0.003378773341,7180,2
+scarcity,shallow-ensemble,1.0,bregman-estimated,0.1069713533,0.003639814677,7180,2
+scarcity,duq,1.0,information-theoretic,0.1796124578,0,7180,3
+scarcity,duq,1.0,bregman-estimated,0.1796124578,-2.251394383e-11,7180,3

@@ -1,0 +1,5 @@
+SEED=0 bash tools/launchers/run_cedfgnqz_reconstructed.sh --train-subset 1.0 --discard-ood-test-sets
+SEED=1 bash tools/launchers/run_cedfgnqz_reconstructed.sh --train-subset 1.0 --discard-ood-test-sets
+SEED=2 bash tools/launchers/run_cedfgnqz_reconstructed.sh --train-subset 1.0 --discard-ood-test-sets
+SEED=3 bash tools/launchers/run_cedfgnqz_reconstructed.sh --train-subset 1.0 --discard-ood-test-sets
+SEED=4 bash tools/launchers/run_cedfgnqz_reconstructed.sh --train-subset 1.0 --discard-ood-test-sets

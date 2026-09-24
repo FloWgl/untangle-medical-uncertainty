@@ -1,0 +1,15 @@
+intervention,method,level,decomposition,au_mean,eu_mean,finite_n,task
+scarcity,correctness-prediction,1.0,information-theoretic,0.1045672521,0,7180,1
+scarcity,correctness-prediction,1.0,bregman-estimated,0.1045672521,-7.880567032e-11,7180,1
+scarcity,deep-correctness-prediction,1.0,information-theoretic,0.1002445519,0,7180,2
+scarcity,deep-correctness-prediction,1.0,bregman-estimated,0.1002445519,4.009551718e-11,7180,2
+scarcity,loss-prediction,1.0,information-theoretic,0.1019592285,0,7180,3
+scarcity,loss-prediction,1.0,bregman-estimated,0.1019592285,-3.301845949e-11,7180,3
+scarcity,deep-loss-prediction,1.0,information-theoretic,0.1257501543,0,7180,4
+scarcity,deep-loss-prediction,1.0,bregman-estimated,0.1257501543,2.199611604e-10,7180,4
+scarcity,mc-dropout,1.0,information-theoretic,0.1328613609,0.01678682305,7180,5
+scarcity,mc-dropout,1.0,bregman-estimated,0.1328613609,0.0183695294,7180,5
+scarcity,het,1.0,information-theoretic,0.1217880547,0.01736928709,7180,6
+scarcity,het,1.0,bregman-estimated,0.1217880547,0.02015758306,7180,6
+scarcity,het-xl,1.0,information-theoretic,0.1636299342,0.01206135191,7180,7
+scarcity,het-xl,1.0,bregman-estimated,0.1636299342,0.0128941806,7180,7

@@ -1,0 +1,9 @@
+bash tools/launchers/run_cedfgnqz_reconstructed.sh --train-subset 1.0 --discard-ood-test-sets
+bash tools/launchers/run_azcfycns_reconstructed.sh --train-subset 1.0 --discard-ood-test-sets
+bash tools/launchers/run_k4xc00mf_reconstructed.sh --train-subset 1.0 --discard-ood-test-sets
+bash tools/launchers/run_cedfgnqz_reconstructed.sh --train-subset 0.5 --discard-ood-test-sets
+bash tools/launchers/run_azcfycns_reconstructed.sh --train-subset 0.5 --discard-ood-test-sets
+bash tools/launchers/run_k4xc00mf_reconstructed.sh --train-subset 0.5 --discard-ood-test-sets
+bash tools/launchers/run_cedfgnqz_reconstructed.sh --train-subset 0.1 --discard-ood-test-sets
+bash tools/launchers/run_azcfycns_reconstructed.sh --train-subset 0.1 --discard-ood-test-sets
+bash tools/launchers/run_k4xc00mf_reconstructed.sh --train-subset 0.1 --discard-ood-test-sets

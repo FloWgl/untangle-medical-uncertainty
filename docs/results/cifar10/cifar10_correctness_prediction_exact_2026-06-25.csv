@@ -1,0 +1,4 @@
+phase,final_accuracy,final_metric,best_metric,best_epoch
+full-data,0.9433,0.9039,0.9176,60
+scarce-50pct,0.9049,0.8872,0.8930,66
+scarce-10pct,0.7867,0.7399,0.7597,44

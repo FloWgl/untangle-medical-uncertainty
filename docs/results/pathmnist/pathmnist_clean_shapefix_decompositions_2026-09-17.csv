@@ -1,0 +1,3 @@
+intervention,method,level,decomposition,au_mean,eu_mean,finite_n,task
+scarcity,hetclassnn,1.0,information-theoretic,0.1107285246,0.01530389488,7180,1
+scarcity,hetclassnn,1.0,bregman-estimated,0.1107285246,0.0171825923,7180,1

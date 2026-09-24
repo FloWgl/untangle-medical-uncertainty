@@ -1,0 +1,82 @@
+config:
+  command:
+  - python
+  - ${program}
+  - ${args_no_boolean_flags}
+  method: grid
+  metric:
+    goal: maximize
+    name: best_id_eval_one_minus_max_probs_of_bma_auroc_hard_bma_correctness_original
+  parameters:
+    accumulation-steps:
+      value: 16
+    amp:
+      value: true
+    amp-dtype:
+      value: float16
+    batch-size:
+      value: 128
+    best-save-start-epoch:
+      value: 0
+    crop-pct:
+      value: 0.875
+    data-dir:
+      value: /host/scratch_local/datasets/ImageNet2012
+    dataset:
+      value: hard/imagenet
+    dataset-id:
+      value: soft/imagenet
+    epochs:
+      value: 0
+    eval-metric:
+      value: id_eval_one_minus_max_probs_of_bma_auroc_hard_bma_correctness_original
+    evaluate-on-test-sets:
+      value: true
+    img-size:
+      value: 224
+    log-wandb:
+      value: true
+    loss:
+      value: cross-entropy
+    lr:
+      value: 0
+    mean:
+      value: 0.485,0.456,0.406
+    method-name:
+      value: temperature-scaling
+    model-name:
+      value: untangle/resnet_50
+    num-classes:
+      value: 1000
+    opt:
+      value: lamb
+    pin-memory:
+      value: true
+    prefetcher:
+      value: true
+    pretrained:
+      value: true
+    reset-classifier:
+      value: false
+    sched-kwargs:
+      value: sched=cosine warmup_lr=0 warmup_epochs=0
+    seed:
+      value: 42
+    soft-imagenet-label-dir:
+      value: SLURM_TUE
+    std:
+      value: 0.229,0.224,0.225
+    test-split:
+      value: val
+    use-temperature-scaling:
+      value: true
+    weight-decay:
+      value: 0.01
+    weight-paths:
+      values:
+      - /host/mnt/lustre/work/oh/owl569/repos/untangle/checkpoints/20241025-125549-101319-untangle_resnet_50-224/checkpoint_best.pt
+      - /host/mnt/lustre/work/oh/owl569/repos/untangle/checkpoints/20241025-125728-807059-untangle_resnet_50-224/checkpoint_best.pt
+      - /host/mnt/lustre/work/oh/owl569/repos/untangle/checkpoints/20241025-125734-356871-untangle_resnet_50-224/checkpoint_best.pt
+      - /host/mnt/lustre/work/oh/owl569/repos/untangle/checkpoints/20241025-125803-290384-untangle_resnet_50-224/checkpoint_best.pt
+      - /host/mnt/lustre/work/oh/owl569/repos/untangle/checkpoints/20241025-125753-452657-untangle_resnet_50-224/checkpoint_best.pt
+  program: train.py
