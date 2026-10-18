@@ -109,6 +109,10 @@ wandb/
 *.vrb
 *.pptx
 
+# Public thesis publication assets
+!/thesis/Florian_Weigl_Bachelor_Thesis.pdf
+!/assets/pathmnist_uncertainty_responses.png
+
 # Preserve portable command manifests and package requirements
 !requirements.txt
 !/configs/*.txt

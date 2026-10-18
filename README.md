@@ -10,6 +10,41 @@ The central question is whether uncertainty components respond selectively to
 controlled sources of uncertainty, rather than merely producing useful predictive
 uncertainty scores.
 
+## Bachelor Thesis
+
+**Exploring the Applicability of Uncertainty Disentanglement for Medical Image
+Classification**
+
+Florian Weigl, University of Bamberg, 2026
+
+[Read the thesis](thesis/Florian_Weigl_Bachelor_Thesis.pdf)
+
+The thesis examines whether uncertainty estimates in medical image
+classification distinguish between different sources of uncertainty instead of
+only identifying difficult predictions. After reproducing an established
+CIFAR-10 benchmark, the evaluation is transferred to PathMNIST and MHIST.
+Controlled experiments use training-label noise as an aleatoric probe, reduced
+training data as an epistemic probe, image corruptions as a distribution-shift
+probe, and pathologist disagreement as a proxy for diagnostic ambiguity. Label
+noise produces the clearest source-specific response, while data scarcity,
+corruption, and rater disagreement often affect both uncertainty components or
+move them in an unexpected direction. Useful uncertainty scores therefore do
+not necessarily provide a reliable explanation of why a medical image is
+uncertain.
+
+![PathMNIST uncertainty responses](assets/pathmnist_uncertainty_responses.png)
+
+*Aleatoric and epistemic uncertainty changes for PathMNIST under reduced
+training data and 40% symmetric training-label noise, shown for the
+information-theoretic and Bregman decompositions. Label noise mainly increases
+the aleatoric component, whereas reduced training data often fails to produce
+the expected epistemic-dominant response.*
+
+The linked PDF is a public-distribution edition. Four MHIST source images are
+omitted because the MHIST Dataset Research Use Agreement does not permit their
+republication without written permission; the thesis text and results are
+otherwise unchanged.
+
 ## Experiment Scope
 
 | Dataset | Probe | Intended evidence |
@@ -165,5 +200,8 @@ templates for new runs.
 
 ## License
 
-Licensed under the Apache License 2.0. See [LICENSE](LICENSE). Original copyright
-and attribution notices are retained.
+Source code is licensed under the Apache License 2.0; see [LICENSE](LICENSE).
+The original thesis text, original thesis figures, and pull figure are licensed
+under CC BY 4.0; see [THESIS_LICENSE.md](THESIS_LICENSE.md). Third-party material
+retains its original terms. Original copyright and attribution notices are
+retained.
