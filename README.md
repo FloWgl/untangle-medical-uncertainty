@@ -10,6 +10,12 @@ The central question is whether uncertainty components respond selectively to
 controlled sources of uncertainty, rather than merely producing useful predictive
 uncertainty scores.
 
+![Expected aleatoric and epistemic uncertainty responses](thesis/thesis_pull_figure.png)
+
+*Conceptual overview of the source-specific probes: label noise is expected to
+affect aleatoric uncertainty (AU) more strongly, while reduced training data is
+expected to affect epistemic uncertainty (EU) more strongly.*
+
 ## Bachelor Thesis
 
 **Exploring the Applicability of Uncertainty Disentanglement for Medical Image
